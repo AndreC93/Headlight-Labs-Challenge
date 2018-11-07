@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Mars Mining Discovery Service</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+
+        <!-- Legend -->
+        <div> 
+          <span> Legend: </span> 
+          <div class="legend white"> </div>
+          <span> Empty </span>
+          <div class="legend blue"> </div>
+          <span> Mining Node </span>
+          <div class="legend red"> </div>
+          <span> Bot </span>
+          <div class="legend purple"> </div>
+          <span> Bot and Mining Node </span>
+          <div class="legend white multiNode"></div>
+          <span> Overlapping Nodes </span>
+        </div>
+        
+        <!-- Grid for displaying cells -->
+        <div id="grid">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Use axios for http requests -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
