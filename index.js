@@ -1,25 +1,15 @@
-/** Constants */
-
 const ROWS = 20;
 const COLS = 20;
 const NODES_URL = 'http://headlight-tournament-1.herokuapp.com/nodes';
 const BOTS_URL = 'http://headlight-tournament-1.herokuapp.com/bots';
 
-
-/** State functions */
-
-/**
- * All mineral nodes and bots, refreshed every second
- */
 const state = {
   nodes: {},
   bots: {},
 };
 
-/**
- * Fetches all known information about mineral nodes, and updates
- * the state object with that node information
- */
+
+
 async function refresh (str) {
   let result;
   let payload;
@@ -48,13 +38,6 @@ async function refresh (str) {
   }
 }
 
-/** Display functions */
-
-/**
- * Determines the appropriate color for this grid cell,
- * based on whether a node, bot, both, or neither is located
- * within this grid cell
- */
 function colorClass (x, y) {
   let nodes = state.nodes;
   let bots = state.bots;
@@ -62,7 +45,7 @@ function colorClass (x, y) {
   let nodePresent = nodes[x] && nodes[x][y];
   let botPresent = bots[x] && bots[x][y];
 
-  if (!nodePresent && !botPresent) { // Empty
+  if (!nodePresent && !botPresent) {
     return 'white';
   } else if (nodePresent && botPresent) {
     return 'purple';
@@ -74,14 +57,7 @@ function colorClass (x, y) {
 
 }
 
-
-/** App functions */
-
-/**
- * Draws all the cells to the DOM. Adds an appropriate color class depending on whether this grid cell
- * contains a mineral node, a bot, or both.
- */
-function paint () {
+const paint = () => {
   const grid = document.getElementById("grid");
   grid.innerHTML = '';
 
@@ -102,10 +78,7 @@ function paint () {
   }
 }
 
-/**
- * Main run loop. Every 1s, fetch nodes and bots and re-paint everything.
- */
-function start () {
+const start = () => {
   setInterval(() => {
     refresh('node');
     refresh('bot');
@@ -113,10 +86,6 @@ function start () {
   }, 1000)
 }
 
-
-/**
- * Kicks off the run loop once the DOM loads.
- */
 document.addEventListener('DOMContentLoaded', () => {
   paint();
   start();

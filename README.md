@@ -3,25 +3,21 @@
 
 ## My approach
 
-I went with a vanilla JavaScript approach because it seemed like the fastest way to get started. I like to start simply
-and make things more complicated over time.
-
-I started out by...
+I built off of the sample code and expanded the vanilla JavaScript to include all the data. I wanted to keep to vanilla Javascript since it is easy to deploy, with no setup needed. I refactored what I thought was not great performance-wise, such as the deleting of the cells one by one and replaced it with quicker innerHTML overwrites.
 
 ## Tradeoffs I made
 
-I decided to do X because it seemed like the fastest way to get going, and time was a factor obviously.
+I decided to not use React because of the time it would take to setup. 
+I stuck to vanilla JavaScript, but in hindsight, I should have wrapped everything in a class.
 
-Though Framework Z is popular, I decided not to use it because I didn't feel like I was familiar enough to implement
-everything in time.
+I made the refresh function take in a string because I found that the API calls to get the nodes and bots handle the data received in a similar fashion. Doing so, allowed for DRY code. 
 
 ## Future goals
 
 With more time I would've implemented:
-   * Feature A, because it would've been really informative
-   * Feature B, because I think it's really cool.
+   * Bots moving animation
+   * Responsive grid sizing
 
-Feature A would've taken roughly another 30 minutes I think, but would add a lot more information. Still, I didn't want to ignore the write-up to implement feature A,
-so I decided to leave it out.
+The moving animation would probably take me quite a bit of time. I would probably implement React and keep track of a previous location state to achieve this. 
 
-Feature B is a much longer investment, but I think it'd be really cool because of reasons X,Y,Z.
+Responsive grid sizing based on browser sizes would take less time, but would require quite a bit of trying out different CSS styles to achieve that. 
