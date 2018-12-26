@@ -5,7 +5,7 @@
 
 I built off of the sample code and expanded the vanilla JavaScript to include all the data (ie. bots). I wanted to keep to vanilla Javascript since it is easy to deploy, with no setup needed. I refactored what I thought was not great performance-wise, such as the deleting of the cells one by one and replaced it with quicker innerHTML overwrites.
 
-## Tradeoffs I made
+## Tradeoffs
 
 I decided to not use React because of the time it would take to setup. 
 I stuck to vanilla JavaScript, but in hindsight, I should have wrapped everything in a class.
